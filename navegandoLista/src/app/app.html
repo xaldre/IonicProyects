@@ -1,0 +1,16 @@
+<ion-menu [content]="content">
+
+  <ion-header>
+    <ion-toolbar>
+      <ion class="tittle">Menú</ion>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-icon name="list">
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+    </ion-icon>
+  </ion-content>
+
+</ion-menu>
