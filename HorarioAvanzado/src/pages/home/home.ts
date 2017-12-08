@@ -8,9 +8,10 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  public nombre:any="nada";
+  public nombre: any = "nada";
+  public list: any[];
   constructor(public navCtrl: NavController, public sql: SqlProvider) {
-    // this.fetchNombre();
+    this.list=this.sql.list;
   }
 
   fetchNombre() {

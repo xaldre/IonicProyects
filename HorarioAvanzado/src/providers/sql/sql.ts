@@ -27,7 +27,7 @@ export class SqlProvider {
   constructor(public http: HttpClient, public platform: Platform, public sqlite: SQLite) {
     this.platform.ready().then(
       () => this.openDatabase()
-        .then(() => console.log("DB conectada"))
+        .then((data) => console.log("DB conectada"))
         .catch((e) => console.log(e.toString()))
     ).catch();
     // this.openDatabase();
@@ -36,7 +36,10 @@ export class SqlProvider {
 
   openDatabase() {
     return new Promise((resolve, reject) => {
-      this.sqlite.create(this.conector).then((db: SQLiteObject) => resolve(db)).catch(() => reject())
+      this.sqlite.create(this.conector).then((db: SQLiteObject) => {
+        this.sqlDB = db;
+        resolve(db)
+      }).catch(() => reject())
     });
     // this.sqlite.create(this.conector).then((db: SQLiteObject) => {
     //   this.sqlDB = db;
@@ -53,10 +56,12 @@ export class SqlProvider {
   getNombre() {
     console.log("entro en getNombre")
     return new Promise((resolve, reject) => {
-      this.sqlDB.executeSql(this.sentence, {}).then((data) => {
-        let obj = data.rows.item(0);
-        console.log(obj.toString());
-        resolve(obj);
+      this.sqlDB.executeSql(this.sqlMaterias, {}).then((data) => {
+        for (let i = 0; i < data.rows.length; i++) {
+          let obj = data.rows.item(i);
+          this.list.push(obj);
+          console.log(obj);
+        }
       }).catch((e) => {
         console.log(e.toString())
         reject(e);
