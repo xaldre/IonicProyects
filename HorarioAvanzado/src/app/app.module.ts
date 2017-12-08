@@ -6,6 +6,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { HttpClientModule } from '@angular/common/http';
+
 import { SqlProvider } from '../providers/sql/sql';
 import { SQLite } from '@ionic-native/sqlite';
 
@@ -16,7 +18,8 @@ import { SQLite } from '@ionic-native/sqlite';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
