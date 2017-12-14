@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Lista de cursos
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ng-container *ngFor="let curso of cursos">
+      <!-- <ion-item-divider *ngIf="checkForDivider(curso.$shorthand)" no-lines ></ion-item-divider> -->
+      <ion-item *ngIf="compareCurse(curso.$shorthand)" text-wrap text-center padding-top>
+        <h2>{{curso.$shorthand}}</h2>
+        <p>{{curso.$name}}</p>
+        <ion-icon [name]="curso.$iconName" item-end color="danger"></ion-icon>
+      </ion-item>
+      <button ion-item detail-show text-wrap (click)="load(curso)">
+        <ion-label padding-left>{{curso.$year}}º{{curso.$leter}}</ion-label>
+        <ion-icon name="arrow-forward" padding-right></ion-icon>
+      </button>
+    </ng-container>
+  </ion-list>
+</ion-content>
