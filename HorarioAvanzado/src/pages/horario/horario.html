@@ -1,0 +1,10 @@
+<ion-content>
+  <ion-grid>
+    <ion-row *ngFor="let hora of matrix;index as i">
+      <ion-col *ngFor="let materia of hora;index as j" col-2 [class]="style[i%2]" (click)="showDescription(materia.descripcion)"
+        text-center padding-top padding-bottom>
+        {{materia.nombre}}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

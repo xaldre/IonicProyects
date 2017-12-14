@@ -14,3 +14,24 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+  .cell-primary {
+    background-color: #31bb2c;
+  }
+  .cell-primary-alt {
+    background-color: #4ebb48;
+  }
+  
+  .cell-secondary {
+    background-color: #89df86;
+  }
+  .cell-secondary-alt {
+    background-color: #89df86;
+  }
+  
+  .cell-danger-primary {
+    background-color: #d35151;
+  }
+  
+  .cell-danger-secondary {
+    background-color: #f39191;
+  }

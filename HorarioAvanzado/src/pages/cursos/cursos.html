@@ -1,0 +1,23 @@
+<!--
+  Generated template for the CursosPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{titulo}} - Cursos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let curso of list" (click)="loadHorario(curso)">
+    <h2 padding-left>{{curso.nombre}}</h2>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

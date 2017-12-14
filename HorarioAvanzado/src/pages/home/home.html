@@ -1,20 +1,17 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Prueba DB
+      Estudios
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h1>Version 1</h1>
+<ion-content>
   <ion-list>
-    <ion-list-header>
-      Materias
-    </ion-list-header>
-    <ion-item *ngFor='let mat of list'>
-      {{mat.nombre}}
+    <ion-item *ngFor='let item of list' text-wrap (click)="loadCursos(item)">
+      <h2>{{item.acronimo}}</h2>
+      <p>{{item.nombre}}</p>
+      <ion-badge item-end>{{item.conteo}}</ion-badge>
     </ion-item>
   </ion-list>
-  <button ion-button (click)="fetchNombre()">GetNombre</button>
 </ion-content>
