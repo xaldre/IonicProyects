@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      {{title}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <input type="text" [ngModel]="nombre" (click)="showModalNombre()" placeholder="Selecciona un Nombre">
+  <br>
+  <br>
+  <input type="text" [ngModel]="provincia" (click)="showModalProvincia()" placeholder="Selecciona una Provincia">
+</ion-content>
