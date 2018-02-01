@@ -1,0 +1,24 @@
+<!-- Esto define lo que aparece cuando despl
+  egamos el menu lateral -->
+<!-- que vamos a desplegar un menu -->
+<!-- side permite cambiar el lado del menu -->
+<ion-menu side="right" [content]="content">
+    <!-- definimsos la cabecera -->
+    <ion-header>
+      <ion-toolbar color="danger">
+        <ion-title>Estoy escondida</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <!-- dentro del menu vamos a definir los contenidos del propio menu -->
+    <ion-content>
+      <ion-list>
+        <!-- para que cierre el menu una vez clikeado  MenuClose-->
+        <!-- probar sin y con menu -->
+        <button menuClose ion-item (click)="abrirHome()">        Home      </button>
+        <button menuClose ion-item>        Ingles      </button>
+        <button menuClose ion-item (click)="abrirAleman()">        Aleman      </button>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <!-- hay que definir como se va a navegar -->
+  <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
