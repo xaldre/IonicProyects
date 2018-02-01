@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h1>Version 1</h1>
+  <ion-list>
+    <ion-list-header>
+      Provincias
+    </ion-list-header>
+    <ion-item *ngFor='let prov of list'>
+      {{prov.provincia}}
+    </ion-item>
+  </ion-list>
+</ion-content>
