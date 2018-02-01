@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-tabs (ionChange)="changeTitle($event)">
+  <!-- <ion-tab [root]="cocheRoot" tabTitle="Coche" tabIcon="car"></ion-tab>
+    <ion-tab [root]="amotoRoot" tabTitle="Amoto" tabIcon="bicycle"></ion-tab>
+    <ion-tab [root]="guaguaRoot" tabTitle="Guagua" tabIcon="bus"></ion-tab> -->
+
+  <ng-container *ngFor="let tab of pages">
+    <ion-tab *ngIf="tab.shown==true" [root]="tab.componente" [rootParams]="distancia" [tabTitle]="tab.title" [tabIcon]="tab.icono"></ion-tab>
+  </ng-container>
+</ion-tabs>
